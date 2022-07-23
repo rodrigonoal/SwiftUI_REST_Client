@@ -16,6 +16,7 @@
 		08B90046288C1A0900C04035 /* UserCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B90045288C1A0900C04035 /* UserCredentials.swift */; };
 		08B90048288C1AB800C04035 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B90047288C1AB800C04035 /* Product.swift */; };
 		08B9004B288C1CF500C04035 /* AuthenticationInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B9004A288C1CF500C04035 /* AuthenticationInterceptor.swift */; };
+		08DFA3D9288C308B00365729 /* SalesProviderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DFA3D8288C308B00365729 /* SalesProviderClient.swift */; };
 		2AE3C004CF0FB556A4D7950A /* Pods_SwiftUI_REST_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC519DA7C12CD86A8EDB6ABE /* Pods_SwiftUI_REST_Client.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		08B90045288C1A0900C04035 /* UserCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentials.swift; sourceTree = "<group>"; };
 		08B90047288C1AB800C04035 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		08B9004A288C1CF500C04035 /* AuthenticationInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationInterceptor.swift; sourceTree = "<group>"; };
+		08DFA3D8288C308B00365729 /* SalesProviderClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesProviderClient.swift; sourceTree = "<group>"; };
 		4BB6A85B61AB82913D680571 /* Pods-SwiftUI_REST_Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUI_REST_Client.release.xcconfig"; path = "Target Support Files/Pods-SwiftUI_REST_Client/Pods-SwiftUI_REST_Client.release.xcconfig"; sourceTree = "<group>"; };
 		8EBF3B2E8D0EEB4D9916C3F5 /* Pods-SwiftUI_REST_Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUI_REST_Client.debug.xcconfig"; path = "Target Support Files/Pods-SwiftUI_REST_Client/Pods-SwiftUI_REST_Client.debug.xcconfig"; sourceTree = "<group>"; };
 		EC519DA7C12CD86A8EDB6ABE /* Pods_SwiftUI_REST_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUI_REST_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				08B9004A288C1CF500C04035 /* AuthenticationInterceptor.swift */,
+				08DFA3D8288C308B00365729 /* SalesProviderClient.swift */,
 			);
 			path = Webservices;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				08B90044288C183600C04035 /* AccessTokenStorage.swift in Sources */,
 				08B90046288C1A0900C04035 /* UserCredentials.swift in Sources */,
 				08B9004B288C1CF500C04035 /* AuthenticationInterceptor.swift in Sources */,
+				08DFA3D9288C308B00365729 /* SalesProviderClient.swift in Sources */,
 				08B90048288C1AB800C04035 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

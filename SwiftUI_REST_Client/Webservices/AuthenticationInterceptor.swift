@@ -12,8 +12,26 @@ final class AuthenticationInterceptor: Alamofire.RequestInterceptor {
         self.baseUrl = baseUrl
     }
     
+    func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
+        var urlRequest = urlRequest
+        
+        if isValidTOken() {
+            urlRequest.setValue("Bearer " + accessTokenStorage!.accessToken, forHTTPHeaderField: "Authorization")
+        }
+        completion(.success(urlRequest))
+    }
+    
+    func retry(_ request: Request, for session: Session, dueTo error: Error, completion: @escaping (RetryResult) -> Void) {
+        // guard is an inverted if
+        // this is a fail fast code - stop it quickly
+        guard let response = request.task?.response as? HTTPURLResponse, response.statusCode == 401 else {
+            return completion(.doNotRetryWithError(error))
+        }
+                getAccessToken(completion: completion)
+    }
+    
     // @escaping async context
-    private func getAccessToken(completion: @escaping (RetryResult) -> Void) -> Void{
+    private func getAccessToken(completion: @escaping (RetryResult) -> Void) {
         let tokenEndpoint = baseUrl + "oauth/token"
         
         let param: Parameters = [
