@@ -15,7 +15,7 @@ final class AuthenticationInterceptor: Alamofire.RequestInterceptor {
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         var urlRequest = urlRequest
         
-        if isValidTOken() {
+        if isValidToken() {
             urlRequest.setValue("Bearer " + accessTokenStorage!.accessToken, forHTTPHeaderField: "Authorization")
         }
         completion(.success(urlRequest))
@@ -65,7 +65,7 @@ final class AuthenticationInterceptor: Alamofire.RequestInterceptor {
         print("Access token has been requested...")
     }
     
-    private func isValidTOken() -> Bool{
+    private func isValidToken() -> Bool{
         if let accessToken = self.accessTokenStorage {
             return accessToken.isValidToken()
         } else {

@@ -25,11 +25,32 @@ class SalesProviderClient {
                             baseUrl: baseUrl))
     }
     
+    func createProduct(product: Product, completion: @escaping (Product?) -> Void) {
+        session.request(baseUrl + "api/products", method: .post, parameters: product, encoder: JSONParameterEncoder.default)
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+            .responseDecodable(of: Product.self) {
+                response in
+                switch response.result{
+                case .success:
+                    DispatchQueue.main.async {
+                    completion(response.value)
+                    }
+                case let .failure(error):
+                    print(error)
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
+                }
+            }
+    }
+    
     func getProducts(completion: @escaping ([Product]?) -> Void) {
         session.request(baseUrl + "api/products")
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseDecodable(of: [Product].self) { response in
+                print(response)
                 switch response.result {
                 case .success:
                     // how to make sure this is being executed at the main thread:
