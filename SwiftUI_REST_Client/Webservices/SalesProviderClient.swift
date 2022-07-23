@@ -26,23 +26,23 @@ class SalesProviderClient {
     }
     
     func deleteProduct(productCode: String,
-    completion: @escaping (Product?) -> Void) {
-    session.request(baseUrl + "api/products/\(productCode.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!)", method: .delete)
-    .validate(statusCode: 200..<300)
-    .validate(contentType: ["application/json"])
-    .responseDecodable(of: Product.self) { response in
-    switch response.result {
-    case .success:
-    DispatchQueue.main.async {
-    return completion(response.value)
-    }
-    case let .failure(error):
-    print(error)
-    DispatchQueue.main.async {
-    completion(nil)
-    }
-    }
-    }
+                       completion: @escaping (Product?) -> Void) {
+        session.request(baseUrl + "api/products/\(productCode.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!)", method: .delete)
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+            .responseDecodable(of: Product.self) { response in
+                switch response.result {
+                case .success:
+                    DispatchQueue.main.async {
+                        return completion(response.value)
+                    }
+                case let .failure(error):
+                    print(error)
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
+                }
+            }
     }
     
     func createProduct(product: Product, completion: @escaping (Product?) -> Void) {

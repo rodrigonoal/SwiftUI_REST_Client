@@ -12,10 +12,10 @@ struct ContentView: View {
     private func showNewProductView() {
         self.showModal = true
     }
-
+    
     private func newProductCompletion(product: Product) {
-    self.productListViewModel.products
-    .append(ProductModel(product: product))
+        self.productListViewModel.products
+            .append(ProductModel(product: product))
     }
     var body: some View {
         List {
