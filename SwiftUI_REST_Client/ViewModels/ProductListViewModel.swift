@@ -14,4 +14,12 @@ class ProductListViewModel: ObservableObject {
             }
         }
     }
- }
+    
+    func deleteProduct(product: ProductModel,
+                       completion: @escaping (Product?) -> Void) {
+        SalesProviderClient.sharedInstance
+            .deleteProduct(productCode: product.code) { product in
+                completion(product)
+            }
+    }
+}
