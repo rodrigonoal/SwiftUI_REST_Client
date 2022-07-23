@@ -1,16 +1,19 @@
-//
-//  ContentView.swift
-//  SwiftUI_REST_Client
-//
-//  Created by user219835 on 7/23/22.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    // observed: make redraw the view which is observed once the data changes
+    @ObservedObject private var productListViewModel = ProductListViewModel()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        List {
+            ForEach(self.productListViewModel.products, id: \.id) { product in
+                Text(product.name)
+                Spacer()
+                Text(product.code)
+                Spacer()
+                Text(String(format: "$ %.2f", product.price))
+            }
+        }
     }
 }
 
