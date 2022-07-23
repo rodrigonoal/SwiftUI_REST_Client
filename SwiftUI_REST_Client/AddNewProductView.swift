@@ -1,0 +1,58 @@
+import SwiftUI
+
+struct AddNewProductView: View {
+    @Binding var isPresented: Bool
+    var completion: (Product) -> Void
+
+    @State private var addNewProductViewModel = AddNewProductViewModel()
+    @State private var showAlert = false
+    
+    private func dismiss() {
+        self.isPresented = false
+    }
+    
+    private func saveProduct() {
+        self.showAlert = false
+        self.addNewProductViewModel.saveNewProduct {
+            product in
+            if let p = product {
+                completion(p)
+                self.isPresented = false
+            } else {
+                self.showAlert = true
+            }
+        }
+    }
+    
+    
+    var body: some View {
+        NavigationView {
+            Form {
+                Section() {
+                    TextField("Enter the name", text: self.$addNewProductViewModel.name)
+                    TextField("Enter the description", text: self.$addNewProductViewModel.description)
+                    TextField("Enter the code", text: self.$addNewProductViewModel.code)
+                    PriceField(title: "Enter the price", value: self.$addNewProductViewModel.price)
+                }
+            }
+            .navigationBarTitle("New product", displayMode: .inline)
+            .navigationBarItems(
+                leading: Button(action: dismiss) {
+                    Text("Cancel")
+                        .foregroundColor(.red)
+                }, trailing: Button(action: saveProduct) {
+                    Text("Add")
+                        .foregroundColor(.blue)
+                })
+        }
+        
+    }
+}
+
+struct AddNewProductView_Previews: PreviewProvider {
+    static var previews: some View {
+        AddNewProductView(isPresented: .constant(false)) { product in
+            
+        }
+    }
+}
