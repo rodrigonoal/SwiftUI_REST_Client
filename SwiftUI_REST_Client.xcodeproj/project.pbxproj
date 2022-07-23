@@ -10,6 +10,8 @@
 		0822611A288C5E3A00607293 /* AddNewProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08226119288C5E3A00607293 /* AddNewProductViewModel.swift */; };
 		0822611C288C5FCB00607293 /* AddNewProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0822611B288C5FCB00607293 /* AddNewProductView.swift */; };
 		0822611E288C645700607293 /* PriceField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0822611D288C645700607293 /* PriceField.swift */; };
+		08800F88288C7E5100A6A911 /* EditProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08800F87288C7E5100A6A911 /* EditProductViewModel.swift */; };
+		08800F8A288C7F0100A6A911 /* EditProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08800F89288C7F0100A6A911 /* EditProductView.swift */; };
 		08B90033288C111D00C04035 /* SwiftUI_REST_ClientApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B90032288C111D00C04035 /* SwiftUI_REST_ClientApp.swift */; };
 		08B90035288C111D00C04035 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B90034288C111D00C04035 /* ContentView.swift */; };
 		08B90037288C111F00C04035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08B90036288C111F00C04035 /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 		08226119288C5E3A00607293 /* AddNewProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProductViewModel.swift; sourceTree = "<group>"; };
 		0822611B288C5FCB00607293 /* AddNewProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProductView.swift; sourceTree = "<group>"; };
 		0822611D288C645700607293 /* PriceField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceField.swift; sourceTree = "<group>"; };
+		08800F87288C7E5100A6A911 /* EditProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProductViewModel.swift; sourceTree = "<group>"; };
+		08800F89288C7F0100A6A911 /* EditProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProductView.swift; sourceTree = "<group>"; };
 		08B9002F288C111D00C04035 /* SwiftUI_REST_Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_REST_Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08B90032288C111D00C04035 /* SwiftUI_REST_ClientApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_REST_ClientApp.swift; sourceTree = "<group>"; };
 		08B90034288C111D00C04035 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +88,7 @@
 				08B90049288C1CC100C04035 /* Webservices */,
 				08B90040288C150000C04035 /* Models */,
 				08B90032288C111D00C04035 /* SwiftUI_REST_ClientApp.swift */,
+				08800F89288C7F0100A6A911 /* EditProductView.swift */,
 				0822611B288C5FCB00607293 /* AddNewProductView.swift */,
 				08B90034288C111D00C04035 /* ContentView.swift */,
 				0822611D288C645700607293 /* PriceField.swift */,
@@ -127,6 +132,7 @@
 				08DFA3DB288C35DF00365729 /* PorductModel.swift */,
 				08DFA3DD288C371700365729 /* ProductListViewModel.swift */,
 				08226119288C5E3A00607293 /* AddNewProductViewModel.swift */,
+				08800F87288C7E5100A6A911 /* EditProductViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -262,11 +268,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08800F88288C7E5100A6A911 /* EditProductViewModel.swift in Sources */,
 				08B90042288C161500C04035 /* AccessTokenResponse.swift in Sources */,
 				08B90035288C111D00C04035 /* ContentView.swift in Sources */,
 				08DFA3DC288C35DF00365729 /* PorductModel.swift in Sources */,
 				08B90033288C111D00C04035 /* SwiftUI_REST_ClientApp.swift in Sources */,
 				08B90044288C183600C04035 /* AccessTokenStorage.swift in Sources */,
+				08800F8A288C7F0100A6A911 /* EditProductView.swift in Sources */,
 				08B90046288C1A0900C04035 /* UserCredentials.swift in Sources */,
 				08DFA3DE288C371700365729 /* ProductListViewModel.swift in Sources */,
 				0822611A288C5E3A00607293 /* AddNewProductViewModel.swift in Sources */,

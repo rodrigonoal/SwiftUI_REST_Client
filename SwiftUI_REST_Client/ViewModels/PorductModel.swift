@@ -3,7 +3,7 @@ import Foundation
 class ProductModel {
     var product: Product
     
-    init(product: Product){
+    init(product: Product) {
         self.product = product
     }
     
@@ -16,14 +16,14 @@ class ProductModel {
     }
     
     var description: String {
-        return self.description
+        return self.product.description
     }
     
     var code: String {
-        return self.code
+        return self.product.code
     }
     
     var price: Double {
-        return self.price
+        return self.product.price
     }
 }
