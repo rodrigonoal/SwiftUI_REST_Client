@@ -45,6 +45,9 @@ struct AddNewProductView: View {
                         .foregroundColor(.blue)
                 })
         }
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Error"), message: Text("The product could not be created"), dismissButton: .default(Text("Dismiss")))
+        }
         
     }
 }

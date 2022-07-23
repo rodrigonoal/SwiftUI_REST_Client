@@ -12,11 +12,14 @@ struct ContentView: View {
     private func showNewProductView() {
         self.showModal = true
     }
-    
+
+    private func newProductCompletion(product: Product) {
+    self.productListViewModel.products
+    .append(ProductModel(product: product))
+    }
     var body: some View {
         List {
             ForEach(self.productListViewModel.products, id: \.id) { product in
-                // TODO 1 - add navigation lirnk
                 NavigationLink(destination: Text("Product" + product.name)){
                     HStack {
                         Text(product.name)
@@ -38,14 +41,9 @@ struct ContentView: View {
                 .foregroundColor(Color.blue)
         })
         .sheet(isPresented: $showModal) {
-            VStack {
-                Text("New product")
-                Button("Close") {
-                    self.showModal = false
-                }
-            }
+        AddNewProductView(isPresented: self.$showModal,
+        completion: newProductCompletion)
         }
-        //TODO 2 - navigation view configuration
     }
 }
 
