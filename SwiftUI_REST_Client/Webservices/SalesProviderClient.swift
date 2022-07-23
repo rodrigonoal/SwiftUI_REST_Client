@@ -24,4 +24,24 @@ class SalesProviderClient {
                             userCredential: userCredential,
                             baseUrl: baseUrl))
     }
+    
+    func getProducts(completion: @escaping ([Product]?) -> Void) {
+        session.request(baseUrl + "api/products")
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+            .responseDecodable(of: [Product].self) { response in
+                switch response.result {
+                case .success:
+                    // how to make sure this is being executed at the main thread:
+                    DispatchQueue.main.async {
+                    return completion(response.value)
+                    }
+                case let .failure(error):
+                    print(error)
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
+                }
+            }
+    }
 }
