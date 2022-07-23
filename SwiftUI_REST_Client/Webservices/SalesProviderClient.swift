@@ -16,7 +16,7 @@ class SalesProviderClient {
         configuration.timeoutIntervalForRequest = 10
         configuration.timeoutIntervalForResource = 10
         
-        let userCredential = UserCredential(username: "rodrigo@noal.com", password: "noal")
+        let userCredential = UserCredential(username: "novo@noal.com", password: "noal")
         
         session = Session(configuration: configuration,
                           interceptor: AuthenticationInterceptor(

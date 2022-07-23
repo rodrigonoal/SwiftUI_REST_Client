@@ -41,7 +41,7 @@ final class AuthenticationInterceptor: Alamofire.RequestInterceptor {
         ]
         let tokenHeaders: HTTPHeaders = [
             "Content-Type": "application/x-www-form-urlencoded",
-            "Authorization": "Basic c211Y29sYTptYXRpbGR1"
+            "Authorization": "Basic c2llY29sYTptYXRpbGRl"
         ]
         
         print("Requesting access token...")
